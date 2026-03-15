@@ -65,7 +65,9 @@ async function injectStealth(context: BrowserContext) {
 }
 
 /** Returns a ready BrowserContext — either from saved session or fresh login */
-export async function getZeptoSession(): Promise<{ browser: Browser; context: BrowserContext }> {
+export async function getZeptoSession(
+  onOtpNeeded?: () => void
+): Promise<{ browser: Browser; context: BrowserContext }> {
   const browser = await chromium.launch({
     headless: true,
     args: ['--no-sandbox', '--disable-blink-features=AutomationControlled'],
@@ -111,13 +113,13 @@ export async function getZeptoSession(): Promise<{ browser: Browser; context: Br
   // Fresh login
   const context = await browserContext(browser)
   await injectStealth(context)
-  await login(context)
+  await login(context, onOtpNeeded)
 
   return { browser, context }
 }
 
 /** Full login flow: phone → OTP → session saved */
-async function login(context: BrowserContext) {
+async function login(context: BrowserContext, onOtpNeeded?: () => void) {
   const phone = process.env.ZEPTO_PHONE
   if (!phone) throw new Error('ZEPTO_PHONE not set in .env')
 
@@ -152,8 +154,9 @@ async function login(context: BrowserContext) {
   await page.screenshot({ path: '/tmp/zepto-otp-screen.png' })
 
   console.log(`[zepto] OTP sent to +91${phone} — waiting for provideOtp() call...`)
+  if (onOtpNeeded) onOtpNeeded()
 
-  // Wait for OTP from agent server
+  // Wait for OTP (from bot chat or POST /otp)
   const otp = await waitForOtp()
   console.log(`[zepto] OTP received: ${otp}`)
 

@@ -21,6 +21,7 @@ import ngrok from '@ngrok/ngrok'
 import 'dotenv/config'
 import { getZeptoSession, provideOtp } from './zepto/session.js'
 import { placeZeptoOrder } from './zepto/order.js'
+import { searchZeptoProducts } from './zepto/search.js'
 import type { Browser, BrowserContext } from 'playwright'
 
 // Zepto browser session (reused across orders)
@@ -133,6 +134,26 @@ app.get('/catalog', (_req, res) => {
 })
 
 /**
+ * GET /search?q=mango+juice
+ * Searches Zepto in real-time and returns matching products.
+ */
+app.get('/search', async (req, res) => {
+  const q = (req.query.q as string | undefined)?.trim()
+  if (!q) return res.status(400).json({ error: 'Missing query param "q"' })
+
+  console.log(`\n[agent] Search: "${q}"`)
+  try {
+    const context  = await getSession()
+    const products = await searchZeptoProducts(context, q)
+    res.json({ query: q, results: products })
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error'
+    console.error('[agent] Search error:', message)
+    res.status(500).json({ error: message })
+  }
+})
+
+/**
  * POST /order
  * Body: { item: "mango juice" }
  *
@@ -188,7 +209,7 @@ app.post('/order', async (req, res) => {
 
     // Step 4: Real Zepto order via Playwright
     console.log('[agent] Launching Zepto automation...')
-    const zepto = await runZeptoOrder(item.name)
+    const zepto = await runZeptoOrder(item.key)
     console.log(`[agent] Zepto order: ${zepto.zeptoOrderId}`)
 
     res.json({
@@ -245,7 +266,8 @@ app.get('/status/:orderId', async (req, res) => {
 app.listen(port, async () => {
   console.log(`\n🤖 Grocery Agent Server running at http://localhost:${port}`)
   console.log(`   GET  /health          — health check`)
-  console.log(`   GET  /catalog         — browse items`)
+  console.log(`   GET  /catalog         — browse catalog items`)
+  console.log(`   GET  /search?q=...    — live Zepto product search`)
   console.log(`   POST /order           — place order (body: { "item": "mango juice" })`)
   console.log(`   POST /otp             — submit Zepto OTP (body: { "otp": "123456" })`)
   console.log(`   GET  /status/:orderId — payment status\n`)
@@ -262,6 +284,7 @@ app.listen(port, async () => {
       console.log(`   ${url}\n`)
       console.log(`   Endpoints:`)
       console.log(`   GET  ${url}/catalog`)
+      console.log(`   GET  ${url}/search?q=<query>`)
       console.log(`   POST ${url}/order`)
       console.log(`   GET  ${url}/status/:orderId\n`)
     } catch (err) {

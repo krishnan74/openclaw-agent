@@ -194,5 +194,5 @@ app.listen(port, () => {
   }
 
   // Start Telegram bot
-  startBot(goatx402Client)
+  startBot()
 })

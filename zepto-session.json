@@ -1,0 +1,263 @@
+{
+  "cookies": [
+    {
+      "name": "session_id",
+      "value": "2e2d8e47-0ee1-4c0c-b0e0-fda657112137",
+      "domain": "www.zepto.com",
+      "path": "/",
+      "expires": 1773582973.744107,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "session_count",
+      "value": "1",
+      "domain": "www.zepto.com",
+      "path": "/",
+      "expires": 1805117173.744403,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "device_id",
+      "value": "3665fab7-10e5-4cd7-9088-2a7d84a5b52b",
+      "domain": "www.zepto.com",
+      "path": "/",
+      "expires": 1805117173.744427,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "marketplace",
+      "value": "SUPER_SAVER",
+      "domain": "www.zepto.com",
+      "path": "/",
+      "expires": 1805117173.744472,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "pwa",
+      "value": "false",
+      "domain": "www.zepto.com",
+      "path": "/",
+      "expires": 1805117181,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.1.1773581184430.768583457428846042",
+      "domain": ".zepto.com",
+      "path": "/",
+      "expires": 1781357193,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.523909295.1773581185",
+      "domain": ".zepto.com",
+      "path": "/",
+      "expires": 1781357185,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1828886013.1773581185",
+      "domain": ".zepto.com",
+      "path": "/",
+      "expires": 1808141184.798312,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "test_cookie",
+      "value": "CheckForPermission",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1773582085.325703,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "accessToken",
+      "value": "eyJhbGciOiJIUzUxMiJ9.eyJ2ZXJzaW9uIjoxLCJzdWIiOiI0NjUwNDM2YS02OWE3LTQ2NWMtYTEyNC1kMDMwNjY2YmQ4MzMiLCJpYXQiOjE3NzM1ODEyNzgsImV4cCI6MTc3MzU4NDg3OH0.40BIxUGkAWg4-vPM0lug7u_w7HCzArvAc8SsWR4F8W4MArn-sGOtWb_TkP3kiOQRZ970MfpICMOwAB-NTouHUQ",
+      "domain": ".zepto.com",
+      "path": "/",
+      "expires": 1808141279.636154,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "refreshToken",
+      "value": "ccea6b3c-16c2-46aa-84f4-7e6e88f8097d",
+      "domain": ".zepto.com",
+      "path": "/",
+      "expires": 1808141279.636309,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "isAuth",
+      "value": "true",
+      "domain": ".zepto.com",
+      "path": "/",
+      "expires": 1808141279.636345,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "mp_dcc8757645c1c32f4481b555710c7039_mixpanel",
+      "value": "%7B%22distinct_id%22%3A%224650436a-69a7-465c-a124-d030666bd833%22%2C%22%24device_id%22%3A%22bb63a48b-5102-4ffa-8c05-683377364c0e%22%2C%22%24initial_referrer%22%3A%22%24direct%22%2C%22%24initial_referring_domain%22%3A%22%24direct%22%2C%22__mps%22%3A%7B%7D%2C%22__mpso%22%3A%7B%7D%2C%22__mpus%22%3A%7B%7D%2C%22__mpa%22%3A%7B%7D%2C%22__mpu%22%3A%7B%7D%2C%22__mpr%22%3A%5B%5D%2C%22__mpap%22%3A%5B%5D%2C%22%24user_id%22%3A%224650436a-69a7-465c-a124-d030666bd833%22%7D",
+      "domain": ".zepto.com",
+      "path": "/",
+      "expires": 1805117280,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "user_id",
+      "value": "4650436a-69a7-465c-a124-d030666bd833",
+      "domain": ".zepto.com",
+      "path": "/",
+      "expires": 1808141279.812824,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "unique_browser_id",
+      "value": "2319179852492664",
+      "domain": "www.zepto.com",
+      "path": "/",
+      "expires": 1805117279,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "zeptoPassDetails",
+      "value": "false",
+      "domain": "www.zepto.com",
+      "path": "/",
+      "expires": 1773667679,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_52LKG2B3L1",
+      "value": "GS2.1.s1773581184$o1$g1$t1773581280$j59$l0$h1875747448",
+      "domain": ".zepto.com",
+      "path": "/",
+      "expires": 1808141280.483483,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "csrfSecret",
+      "value": "qp57ym-EM8M",
+      "domain": "www.zepto.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "XSRF-TOKEN",
+      "value": "PUhQD_-i0rfQtvFac7ucC%3AJ7seAKdHcAvp9BwFvp_QyGmtRlU.A9HNRRP%2FdSTW%2F1Uib2QdZdHnMC46z5jEe7SSiYHHKrw",
+      "domain": "www.zepto.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "serviceability",
+      "value": "%7B%22timeSaved%22%3A1773581279501%7D",
+      "domain": "www.zepto.com",
+      "path": "/",
+      "expires": 1805117280.607022,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.zepto.com",
+      "localStorage": [
+        {
+          "name": "header-store",
+          "value": "{\"state\":{\"query\":\"\",\"activeFilters\":null,\"presetFilters\":null,\"isHeaderDark\":false,\"headerStyles\":{\"background\":{\"linearGradient\":{\"firstColor\":\"#ECDDFE\",\"secondColor\":\"#ECDDFE\"}},\"styles\":{\"addressLabelColor\":\"#000000\",\"addressTextColor\":\"#000000\",\"etaPrimaryTextColor\":\"#000000\",\"etaSecondaryTextColor\":\"#000000\",\"iconColor\":\"#000000\",\"theme\":\"DARK\"}},\"filterId\":null},\"version\":0}"
+        },
+        {
+          "name": "__mpq_dcc8757645c1c32f4481b555710c7039_ev",
+          "value": "[]"
+        },
+        {
+          "name": "user",
+          "value": "{\"state\":{\"user\":{\"blockRefererral\":false,\"emailId\":null,\"fullName\":\"Freedan\",\"id\":\"4650436a-69a7-465c-a124-d030666bd833\",\"isBetaUser\":null,\"isInternalUser\":false,\"isRegistered\":true,\"lastOrderNotified\":true,\"mobileNumber\":\"9952943340\",\"referralCode\":\"JBC833\",\"referredBy\":null,\"userType\":\"CUSTOMER\",\"whatsappOpted\":\"PENDING\",\"countryCode\":\"+91\"},\"isAuth\":true},\"version\":0}"
+        },
+        {
+          "name": "user-position",
+          "value": "{\"state\":{\"userPosition\":null,\"_hasHydrated\":true},\"version\":0}"
+        },
+        {
+          "name": "_gcl_ls",
+          "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"errors\":0,\"creationTimeMs\":1773581184517},\"expires\":1781357184517}}"
+        },
+        {
+          "name": "cart",
+          "value": "{\"state\":{\"cartId\":\"167809dc-dce9-5916-a982-d604f61268a6\",\"cartContent\":{\"d565b64e-9cc5-4b0d-9189-35129776abdb\":{\"storeProductId\":\"4362439a-4b1e-544f-af55-b34907eb000f\",\"productVariantId\":\"d565b64e-9cc5-4b0d-9189-35129776abdb\",\"price\":2700,\"title\":\"Bisleri Packaged Drinking Water Bottle\",\"image\":{\"name\":\"ff3743d9-aedf-49a7-b0ed-5713e283e18b.jpg\",\"path\":\"cms/product_variant/ff3743d9-aedf-49a7-b0ed-5713e283e18b.jpg\",\"mediaType\":\"IMAGE\",\"width\":2500,\"height\":2500,\"id\":\"32ade6c9-d094-4949-bd6e-4dd1ef89ba1e\",\"hidePadding\":true,\"lottiePath\":\"\",\"videoPath\":\"\"},\"weightInGms\":2,\"discountApplicable\":false,\"mrp\":2700,\"timestamp\":1773581185000,\"superSaverSellingPrice\":2700,\"zeptoNowSellingPrice\":2700,\"quantityText\":\"1 pc (2 L)\",\"quantity\":1,\"actionType\":\"\"}},\"storeLevelCartContent\":{},\"storewiseCartProductItemCount\":{},\"removeCampaignProductsList\":[],\"availedCampaignProducts\":[],\"availedCampaignProductIds\":[],\"skipAutoAddToCart\":true,\"decreaseCartItemsArray\":[],\"outOfStockProducts\":[],\"cartWeight\":{\"b4dc8d65-ed2e-4142-81b6-373982b13500\":2},\"oosRecommendationProductIds\":[],\"passAdded\":false,\"showAddedToCartTooltip\":false,\"cartWeightObject\":{\"perOrderWeightLimitInGms\":25000,\"perOrderWeightSecondaryLimitInGms\":25000,\"perOrderWeightSecondarySuperSaverLimitInGms\":50000,\"perOrderWeightSuperSaverLimitInGms\":50000},\"nonSellableProductsPvids\":[]},\"version\":0}"
+        },
+        {
+          "name": "unique_browser_id",
+          "value": "2319179852492664"
+        },
+        {
+          "name": "lastExternalReferrerTime",
+          "value": "1773581184423"
+        },
+        {
+          "name": "lastExternalReferrer",
+          "value": "empty"
+        },
+        {
+          "name": "userReferrals",
+          "value": "{\"state\":{\"userReferrals\":{\"uiSchema\":{\"benefitsWidget\":{\"advocate\":{\"subtitle\":[{\"icon\":\"\",\"style\":{\"color\":\"#5A6477\"},\"text\":\"25% off up to\",\"variant\":\"body2\"},{\"icon\":\"\",\"style\":{\"color\":\"#262A33\"},\"text\":\" ₹200\",\"variant\":\"cta2\"},{\"icon\":\"\",\"style\":{\"color\":\"#5A6477\"},\"text\":\"on your next order\",\"variant\":\"body2\"}],\"title\":[{\"icon\":\"\",\"style\":{\"alignSelf\":\"center\",\"color\":\"#262A33\",\"marginRight\":4},\"text\":\"You Get\",\"variant\":\"cta1\"},{\"icon\":{\"alignSelf\":\"center\",\"height\":24,\"url\":\"referral-benefit-gift.svg\",\"width\":24},\"style\":{}}]},\"receiver\":{\"subtitle\":[{\"icon\":\"\",\"style\":{\"color\":\"#5A6477\"},\"text\":\"25% off up to\",\"variant\":\"body2\"},{\"icon\":\"\",\"style\":{\"color\":\"#262A33\"},\"text\":\" ₹50\",\"variant\":\"cta2\"},{\"icon\":\"\",\"style\":{\"color\":\"#5A6477\"},\"text\":\"on their first order\",\"variant\":\"body2\"}],\"title\":[{\"icon\":\"\",\"style\":{\"alignSelf\":\"center\",\"color\":\"#262A33\",\"marginRight\":4},\"text\":\"They Get\",\"variant\":\"cta1\"},{\"icon\":{\"alignSelf\":\"center\",\"height\":24,\"url\":\"referral-benefit-gift.svg\",\"width\":24},\"style\":{}}]}},\"header\":{\"image\":{\"height\":180,\"url\":\"referral_header.png\",\"width\":360},\"subtitle\":[{\"icon\":\"\",\"style\":{\"color\":\"#5A6477\",\"fontFamily\":\"TTNormsPro-Md\",\"fontSize\":16,\"lineHeight\":23},\"text\":\"Earn ₹1000\",\"variant\":\"body2\"},{\"icon\":\"\",\"style\":{\"color\":\"#5A6477\",\"fontFamily\":\"TTNormsPro-Md\",\"fontSize\":16,\"lineHeight\":23},\"text\":\" for the first 5\",\"variant\":\"body2\"},{\"icon\":\"\",\"style\":{\"color\":\"#5A6477\",\"fontFamily\":\"TTNormsPro-Md\",\"fontSize\":16,\"lineHeight\":23},\"text\":\" referrals\",\"variant\":\"body2\"}],\"title\":[{\"icon\":\"\",\"style\":{\"color\":\"#FF3269\",\"fontFamily\":\"TTNormsPro-Bd\",\"fontSize\":37,\"letterSpacing\":-1.28,\"lineHeight\":39},\"text\":\"Earn ₹200\",\"variant\":\"body2\"},{\"icon\":\"\",\"style\":{\"color\":\"#101418\",\"fontFamily\":\"TTNormsPro-Bd\",\"fontSize\":34,\"letterSpacing\":-1.28,\"lineHeight\":37},\"text\":\"for every friend you refer\",\"variant\":\"body2\"}]},\"stepsToRefer\":{\"footer\":{},\"steps\":[\"Share referral code or link with friends\",\"When they place their first order, you both earn rewards\",\"Redeem your coupons at checkout to claim your rewards\"],\"title\":\"How referral works?\"}}}},\"version\":0}"
+        },
+        {
+          "name": "__mpq_dcc8757645c1c32f4481b555710c7039_pp",
+          "value": "[]"
+        },
+        {
+          "name": "userAddresses",
+          "value": "{\"state\":{\"usersAddresses\":[{\"id\":\"461288de-5a5e-4590-ad0f-0802693c6296\",\"type\":\"OTHER\",\"name\":\"atthai house \",\"latitude\":12.9824363,\"longitude\":80.136275,\"flatDetails\":\"1\",\"buildingName\":\"\",\"buildingId\":null,\"landmark\":\"\",\"contactNumber\":\"\",\"contactName\":\"\",\"deliverToSomeoneElse\":false,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"Abirami Illam, plot no.3A, sammandhanar streeet, Ananthi Nagar, Padmanabha Nagar, Pozhichalur, Chennai, Tamil Nadu 600074, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"Abirami Illam, plot no.3A, sammandhanar streeet, Ananthi Nagar, Padmanabha Nagar, Pozhichalur, Chennai, Tamil Nadu 600074, India\",\"plus_code\":{\"compound_code\":\"X4JP+XGC Chennai, Tamil Nadu, India\",\"global_code\":\"7M42X4JP+XGC\"},\"result\":{\"address_components\":[{\"long_name\":\"Padmanabha Nagar\",\"short_name\":\"Padmanabha Nagar\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_3\"]},{\"long_name\":\"Ananthi Nagar\",\"short_name\":\"Ananthi Nagar\",\"types\":[\"neighborhood\",\"political\"]},{\"long_name\":\"Pozhichalur\",\"short_name\":\"Pozhichalur\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Chengalpattu\",\"short_name\":\"Chengalpattu\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600074\",\"short_name\":\"600074\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"Abirami Illam, plot no.3A, sammandhanar streeet, Ananthi Nagar, Padmanabha Nagar, Pozhichalur, Chennai, Tamil Nadu 600074, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":0,\"lng\":0},\"southwest\":{\"lat\":0,\"lng\":0}},\"location\":{\"lat\":12.9825471,\"lng\":80.136316},\"location_type\":\"GEOMETRIC_CENTER\",\"viewport\":{\"northeast\":{\"lat\":12.9838960802915,\"lng\":80.13766498029149},\"southwest\":{\"lat\":12.9811981197085,\"lng\":80.13496701970848}}},\"place_id\":\"ChIJNQjEvmdfUjoRmxOysjaf5ok\",\"plus_code\":{\"compound_code\":\"X4MP+2G Chennai, Tamil Nadu, India\",\"global_code\":\"7M42X4MP+2G\"},\"types\":[\"establishment\",\"point_of_interest\"]},\"shortAddress\":\"Ananthi Nagar, Padmanabha Nagar, Pozhichalur, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"1\",\"floorV2\":null},{\"id\":\"99335123-aed0-403b-9d66-11088276684a\",\"type\":\"OTHER\",\"name\":\"Home OG\",\"latitude\":12.979487773594624,\"longitude\":80.13466341421008,\"flatDetails\":\"1st house \",\"buildingName\":\"15, Gowthaman St\",\"buildingId\":null,\"landmark\":\" Pasumpon Nagar Extension, Pasumpon Nagar\",\"contactNumber\":\"\",\"contactName\":\"\",\"deliverToSomeoneElse\":false,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"15, Gowthaman St, Pasumpon Nagar Extension, Pasumpon Nagar, Pammal, Chennai, Tamil Nadu 600075, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"15, Gowthaman St, Pasumpon Nagar Extension, Pasumpon Nagar, Pammal, Chennai, Tamil Nadu 600075, India\",\"plus_code\":{\"compound_code\":\"X4HM+QVV Chennai, Tamil Nadu, India\",\"global_code\":\"7M42X4HM+QVV\"},\"result\":{\"address_components\":[{\"long_name\":\"15\",\"short_name\":\"15\",\"types\":[\"street_number\"]},{\"long_name\":\"Gowthaman Street\",\"short_name\":\"Gowthaman St\",\"types\":[\"route\"]},{\"long_name\":\"Pasumpon Nagar Extension\",\"short_name\":\"Pasumpon Nagar Extension\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_3\"]},{\"long_name\":\"Pasumpon Nagar\",\"short_name\":\"Pasumpon Nagar\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_2\"]},{\"long_name\":\"Pammal\",\"short_name\":\"Pammal\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Chengalpattu\",\"short_name\":\"Chengalpattu\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600075\",\"short_name\":\"600075\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"15, Gowthaman St, Pasumpon Nagar Extension, Pasumpon Nagar, Pammal, Chennai, Tamil Nadu 600075, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":12.9796549,\"lng\":80.1347874},\"southwest\":{\"lat\":12.9795689,\"lng\":80.1346959}},\"location\":{\"lat\":12.9796119,\"lng\":80.13474169999999},\"location_type\":\"ROOFTOP\",\"viewport\":{\"northeast\":{\"lat\":12.9809608802915,\"lng\":80.1360906302915},\"southwest\":{\"lat\":12.9782629197085,\"lng\":80.13339266970848}}},\"place_id\":\"ChIJLxToKNFfUjoRLysQrAbNvtk\",\"types\":[\"premise\"]},\"shortAddress\":\"Gowthaman Street, Pasumpon Nagar Extension, Pasumpon Nagar, Pammal, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"1st house , 15, Gowthaman St,  Pasumpon Nagar Extension, Pasumpon Nagar\",\"floorV2\":null},{\"id\":\"f08ae16a-5fbf-4412-b115-92d443f24a92\",\"type\":\"OTHER\",\"name\":\"Other\",\"latitude\":13.077439603712662,\"longitude\":80.26693085208535,\"flatDetails\":\"1\",\"buildingName\":\"\",\"buildingId\":null,\"landmark\":\"\",\"contactNumber\":\"9342199098\",\"contactName\":\"Sairam \",\"deliverToSomeoneElse\":false,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"29A, Vedagiri St, Adikesavarpuram, Chintadripet, Chennai, Tamil Nadu 600002, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"Chintadripet, Adikesavarpuram, Chennai\",\"plus_code\":{\"compound_code\":\"37G8+XQF Chennai, Tamil Nadu, India\",\"global_code\":\"7M5237G8+XQF\"},\"result\":{\"address_components\":[{\"long_name\":\"29A\",\"short_name\":\"29A\",\"types\":[\"street_number\"]},{\"long_name\":\"Vedagiri Street\",\"short_name\":\"Vedagiri St\",\"types\":[\"route\"]},{\"long_name\":\"Adikesavarpuram\",\"short_name\":\"Adikesavarpuram\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_2\"]},{\"long_name\":\"Chintadripet\",\"short_name\":\"Chintadripet\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600002\",\"short_name\":\"600002\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"29A, Vedagiri St, Adikesavarpuram, Chintadripet, Chennai, Tamil Nadu 600002, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":0,\"lng\":0},\"southwest\":{\"lat\":0,\"lng\":0}},\"location\":{\"lat\":13.0774458,\"lng\":80.2669248},\"location_type\":\"ROOFTOP\",\"viewport\":{\"northeast\":{\"lat\":13.0787947802915,\"lng\":80.26827378029151},\"southwest\":{\"lat\":13.0760968197085,\"lng\":80.2655758197085}}},\"place_id\":\"ChIJez3LFAZmUjoRkyEhRN5tW9o\",\"plus_code\":{\"compound_code\":\"37G8+XQ Chennai, Tamil Nadu, India\",\"global_code\":\"7M5237G8+XQ\"},\"types\":[\"street_address\"]},\"shortAddress\":\"Vedagiri Street, Adikesavarpuram, Chintadripet, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"1\",\"floorV2\":null},{\"id\":\"1c4c9c94-e043-470e-a334-c5632f0246c9\",\"type\":\"OTHER\",\"name\":\"Other\",\"latitude\":13.057008843791014,\"longitude\":80.24365833029151,\"flatDetails\":\"1\",\"buildingName\":\"\",\"buildingId\":null,\"landmark\":\"\",\"contactNumber\":\"\",\"contactName\":\"\",\"deliverToSomeoneElse\":false,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"364V+QFM, Rama St, Ponnangipuram, Tirumurthy Nagar, Nungambakkam, Chennai, Tamil Nadu 600034, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"Nungambakkam, Tirumurthy Nagar, Chennai\",\"plus_code\":{\"compound_code\":\"364V+RF3 Chennai, Tamil Nadu, India\",\"global_code\":\"7M52364V+RF3\"},\"result\":{\"address_components\":[{\"long_name\":\"364V+QFM\",\"short_name\":\"364V+QFM\",\"types\":[\"plus_code\"]},{\"long_name\":\"Rama Street\",\"short_name\":\"Rama St\",\"types\":[\"route\"]},{\"long_name\":\"Ponnangipuram\",\"short_name\":\"Ponnangipuram\",\"types\":[\"neighborhood\",\"political\"]},{\"long_name\":\"Tirumurthy Nagar\",\"short_name\":\"Tirumurthy Nagar\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_2\"]},{\"long_name\":\"Nungambakkam\",\"short_name\":\"Nungambakkam\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600034\",\"short_name\":\"600034\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"364V+QFM, Rama St, Ponnangipuram, Tirumurthy Nagar, Nungambakkam, Chennai, Tamil Nadu 600034, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":0,\"lng\":0},\"southwest\":{\"lat\":0,\"lng\":0}},\"location\":{\"lat\":13.0569703,\"lng\":80.243658},\"location_type\":\"ROOFTOP\",\"viewport\":{\"northeast\":{\"lat\":13.0583192802915,\"lng\":80.2450069802915},\"southwest\":{\"lat\":13.0556213197085,\"lng\":80.24230901970849}}},\"place_id\":\"ChIJi4h8MgBnUjoRm-RcQDo93WQ\",\"plus_code\":{\"compound_code\":\"\",\"global_code\":\"\"},\"types\":[\"establishment\",\"point_of_interest\"]},\"shortAddress\":\"Ponnangipuram, Rama Street, Tirumurthy Nagar, Nungambakkam, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"1\",\"floorV2\":null},{\"id\":\"755e6ffe-f341-40a8-8dba-6f36585b5494\",\"type\":\"OTHER\",\"name\":\"Other\",\"latitude\":13.122653,\"longitude\":80.1991713,\"flatDetails\":\"1\",\"buildingName\":\"\",\"buildingId\":null,\"landmark\":\"\",\"contactNumber\":\"\",\"contactName\":\"\",\"deliverToSomeoneElse\":false,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"Ranga Garden Park, 8B, Vivekananda Nagar, Kolathur, Chennai, Tamil Nadu 600099, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"Korattur, Santhosh Nagar, Chennai\",\"plus_code\":{\"compound_code\":\"45FX+3M7 Chennai, Tamil Nadu, India\",\"global_code\":\"7M5245FX+3M7\"},\"result\":{\"address_components\":[{\"long_name\":\"Ranga Garden Park\",\"short_name\":\"Ranga Garden Park\",\"types\":[\"premise\"]},{\"long_name\":\"8B\",\"short_name\":\"8B\",\"types\":[\"premise\"]},{\"long_name\":\"Vivekananda Nagar\",\"short_name\":\"Vivekananda Nagar\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_3\"]},{\"long_name\":\"Kolathur\",\"short_name\":\"Kolathur\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600099\",\"short_name\":\"600099\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"Ranga Garden Park, 8B, Vivekananda Nagar, Kolathur, Chennai, Tamil Nadu 600099, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":13.1227526,\"lng\":80.1991824},\"southwest\":{\"lat\":13.1225592,\"lng\":80.1989949}},\"location\":{\"lat\":13.1226486,\"lng\":80.19905720000001},\"location_type\":\"ROOFTOP\",\"viewport\":{\"northeast\":{\"lat\":13.1240048802915,\"lng\":80.2004376302915},\"southwest\":{\"lat\":13.1213069197085,\"lng\":80.1977396697085}}},\"place_id\":\"ChIJe15y0WJkUjoRUqkCwGMyyFc\",\"plus_code\":{\"compound_code\":\"\",\"global_code\":\"\"},\"types\":[\"premise\"]},\"shortAddress\":\"Vivekananda Nagar, Kolathur, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"1\",\"floorV2\":null},{\"id\":\"f10ec115-9c50-4f9f-aa51-875c29638f5c\",\"type\":\"OTHER\",\"name\":\"skywalk\",\"latitude\":13.07348337237078,\"longitude\":80.22158408537507,\"flatDetails\":\"skywalk \",\"buildingName\":\"\",\"buildingId\":\"3f202029-a6ac-46a7-97a5-d26f3f96b0cc\",\"landmark\":\"\",\"contactNumber\":\"\",\"contactName\":\"\",\"deliverToSomeoneElse\":false,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"100A, Aminjikarai, Chennai, Tamil Nadu 600029, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"100A, Aminjikarai, Chennai, Tamil Nadu 600029, India\",\"plus_code\":{\"compound_code\":\"36FC+9JW Chennai, Tamil Nadu, India\",\"global_code\":\"7M5236FC+9JW\"},\"result\":{\"address_components\":[{\"long_name\":\"100A\",\"short_name\":\"100A\",\"types\":[\"premise\"]},{\"long_name\":\"Aminjikarai\",\"short_name\":\"Aminjikarai\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600029\",\"short_name\":\"600029\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"100A, Aminjikarai, Chennai, Tamil Nadu 600029, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":0,\"lng\":0},\"southwest\":{\"lat\":0,\"lng\":0}},\"location\":{\"lat\":13.073255,\"lng\":80.221604},\"location_type\":\"ROOFTOP\",\"viewport\":{\"northeast\":{\"lat\":13.0746039802915,\"lng\":80.22295298029151},\"southwest\":{\"lat\":13.0719060197085,\"lng\":80.2202550197085}}},\"place_id\":\"ChIJH0rrt4RmUjoRqve5O_huapI\",\"plus_code\":{\"compound_code\":\"36FC+8J Chennai, Tamil Nadu, India\",\"global_code\":\"7M5236FC+8J\"},\"types\":[\"street_address\"]},\"shortAddress\":\"Aminjikarai, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"skywalk \",\"floorV2\":null},{\"id\":\"5ee55d5b-79c6-4d72-9e91-ceea3ea55d55\",\"type\":\"OTHER\",\"name\":\"misshal\",\"latitude\":13.102144202174927,\"longitude\":80.11038271710277,\"flatDetails\":\"15A\",\"buildingName\":\"\",\"buildingId\":null,\"landmark\":\"\",\"contactNumber\":\"8939641182\",\"contactName\":\"Misshal\",\"deliverToSomeoneElse\":false,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"1/5, Govardanagiri, Avadi, Tamil Nadu 600071, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"1/5, Govardanagiri, Avadi, Tamil Nadu 600071, India\",\"plus_code\":{\"compound_code\":\"4426+V52 Avadi, Tamil Nadu, India\",\"global_code\":\"7M524426+V52\"},\"result\":{\"address_components\":[{\"long_name\":\"1/5\",\"short_name\":\"1/5\",\"types\":[\"premise\"]},{\"long_name\":\"Govardanagiri\",\"short_name\":\"Govardanagiri\",\"types\":[\"neighborhood\",\"political\"]},{\"long_name\":\"Avadi\",\"short_name\":\"Avadi\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Tiruvallur\",\"short_name\":\"Tiruvallur\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600071\",\"short_name\":\"600071\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"1/5, Govardanagiri, Avadi, Tamil Nadu 600071, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":0,\"lng\":0},\"southwest\":{\"lat\":0,\"lng\":0}},\"location\":{\"lat\":13.102174,\"lng\":80.110377},\"location_type\":\"ROOFTOP\",\"viewport\":{\"northeast\":{\"lat\":13.1035229802915,\"lng\":80.11172598029151},\"southwest\":{\"lat\":13.1008250197085,\"lng\":80.1090280197085}}},\"place_id\":\"ChIJPUDRm21iUjoROxMBTTAF04Q\",\"plus_code\":{\"compound_code\":\"4426+V5 Avadi, Tamil Nadu, India\",\"global_code\":\"7M524426+V5\"},\"types\":[\"street_address\"]},\"shortAddress\":\"Govardanagiri, Avadi, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"15A\",\"floorV2\":null},{\"id\":\"479b52a4-e0c0-4540-b20b-3efb2ed986e7\",\"type\":\"OTHER\",\"name\":\"Other\",\"latitude\":12.9824363,\"longitude\":80.136275,\"flatDetails\":\"1\",\"buildingName\":\"\",\"buildingId\":null,\"landmark\":\"\",\"contactNumber\":\"\",\"contactName\":\"\",\"deliverToSomeoneElse\":false,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"Abirami Illam, plot no.3A, sammandhanar streeet, Ananthi Nagar, Padmanabha Nagar, Pozhichalur, Chennai, Tamil Nadu 600074, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"Abirami Illam, plot no.3A, sammandhanar streeet, Ananthi Nagar, Padmanabha Nagar, Pozhichalur, Chennai, Tamil Nadu 600074, India\",\"plus_code\":{\"compound_code\":\"X4JP+XGC Chennai, Tamil Nadu, India\",\"global_code\":\"7M42X4JP+XGC\"},\"result\":{\"address_components\":[{\"long_name\":\"Padmanabha Nagar\",\"short_name\":\"Padmanabha Nagar\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_3\"]},{\"long_name\":\"Ananthi Nagar\",\"short_name\":\"Ananthi Nagar\",\"types\":[\"neighborhood\",\"political\"]},{\"long_name\":\"Pozhichalur\",\"short_name\":\"Pozhichalur\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Chengalpattu\",\"short_name\":\"Chengalpattu\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600074\",\"short_name\":\"600074\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"Abirami Illam, plot no.3A, sammandhanar streeet, Ananthi Nagar, Padmanabha Nagar, Pozhichalur, Chennai, Tamil Nadu 600074, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":0,\"lng\":0},\"southwest\":{\"lat\":0,\"lng\":0}},\"location\":{\"lat\":12.9825471,\"lng\":80.136316},\"location_type\":\"GEOMETRIC_CENTER\",\"viewport\":{\"northeast\":{\"lat\":12.9838960802915,\"lng\":80.13766498029149},\"southwest\":{\"lat\":12.9811981197085,\"lng\":80.13496701970848}}},\"place_id\":\"ChIJNQjEvmdfUjoRmxOysjaf5ok\",\"plus_code\":{\"compound_code\":\"X4MP+2G Chennai, Tamil Nadu, India\",\"global_code\":\"7M42X4MP+2G\"},\"types\":[\"establishment\",\"point_of_interest\"]},\"shortAddress\":\"Ananthi Nagar, Padmanabha Nagar, Pozhichalur, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"1\",\"floorV2\":null},{\"id\":\"a21b533a-bcaf-4c58-93ec-ca8eb902b4b2\",\"type\":\"WORK\",\"name\":\"work\",\"latitude\":12.964778202131077,\"longitude\":80.19950045272708,\"flatDetails\":\"1\",\"buildingName\":\"\",\"buildingId\":null,\"landmark\":\"\",\"contactNumber\":\"9952943340\",\"contactName\":\"Freedan\",\"deliverToSomeoneElse\":false,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"2/773, Bazaar Main Rd, Balaiah Garden, Madipakkam, Chennai, Tamil Nadu 600091, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"2/773, Bazaar Main Rd, Balaiah Garden, Madipakkam, Chennai, Tamil Nadu 600091, India\",\"plus_code\":{\"compound_code\":\"X57X+WR6 Chennai, Tamil Nadu, India\",\"global_code\":\"7M42X57X+WR6\"},\"result\":{\"address_components\":[{\"long_name\":\"2/773\",\"short_name\":\"2/773\",\"types\":[\"street_number\"]},{\"long_name\":\"Bazaar Main Road\",\"short_name\":\"Bazaar Main Rd\",\"types\":[\"route\"]},{\"long_name\":\"Balaiah Garden\",\"short_name\":\"Balaiah Garden\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_2\"]},{\"long_name\":\"Madipakkam\",\"short_name\":\"Madipakkam\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Kancheepuram\",\"short_name\":\"Kancheepuram\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600091\",\"short_name\":\"600091\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"2/773, Bazaar Main Rd, Balaiah Garden, Madipakkam, Chennai, Tamil Nadu 600091, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":0,\"lng\":0},\"southwest\":{\"lat\":0,\"lng\":0}},\"location\":{\"lat\":12.964804,\"lng\":80.19961599999999},\"location_type\":\"ROOFTOP\",\"viewport\":{\"northeast\":{\"lat\":12.9661529802915,\"lng\":80.2009649802915},\"southwest\":{\"lat\":12.9634550197085,\"lng\":80.1982670197085}}},\"place_id\":\"ChIJwTI_u8JdUjoR9LbR4MTAkdc\",\"plus_code\":{\"compound_code\":\"X57X+WR Chennai, Tamil Nadu, India\",\"global_code\":\"7M42X57X+WR\"},\"types\":[\"street_address\"]},\"shortAddress\":\"Bazaar Main Road, Balaiah Garden, Madipakkam, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"1\",\"floorV2\":null},{\"id\":\"f051ed02-20bc-47ab-b47b-5deb96dce895\",\"type\":\"OTHER\",\"name\":\"Other\",\"latitude\":13.074073839185282,\"longitude\":80.25371896103024,\"flatDetails\":\"3rd floor\",\"buildingName\":\"37F3+JFV, Narayana Dasari St\",\"buildingId\":null,\"landmark\":\" Egmore, Chennai\",\"contactNumber\":\"\",\"contactName\":\"\",\"deliverToSomeoneElse\":false,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"37F3+JFV, Narayana Dasari St, Egmore, Chennai, Tamil Nadu 600008, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"37F3+JFV, Narayana Dasari St, Egmore, Chennai, Tamil Nadu 600008, India\",\"plus_code\":{\"compound_code\":\"37F3+JFH Chennai, Tamil Nadu, India\",\"global_code\":\"7M5237F3+JFH\"},\"result\":{\"address_components\":[{\"long_name\":\"37F3+JFV\",\"short_name\":\"37F3+JFV\",\"types\":[\"plus_code\"]},{\"long_name\":\"Narayana Dasari Street\",\"short_name\":\"Narayana Dasari St\",\"types\":[\"route\"]},{\"long_name\":\"Egmore\",\"short_name\":\"Egmore\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600008\",\"short_name\":\"600008\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"37F3+JFV, Narayana Dasari St, Egmore, Chennai, Tamil Nadu 600008, India\",\"geometry\":{\"location\":{\"lat\":13.0741002,\"lng\":80.2536781},\"location_type\":\"GEOMETRIC_CENTER\",\"viewport\":{\"northeast\":{\"lat\":13.0754491802915,\"lng\":80.25502708029151},\"southwest\":{\"lat\":13.0727512197085,\"lng\":80.2523291197085}}},\"place_id\":\"ChIJU57RNnNmUjoRzJ2THGaPUOU\",\"types\":[\"establishment\",\"point_of_interest\"]},\"shortAddress\":\"Narayana Dasari Street, Egmore, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"3rd floor, 37F3+JFV, Narayana Dasari St,  Egmore, Chennai\",\"floorV2\":null},{\"id\":\"d35c342e-6b19-4207-a9a4-ec73b73566e2\",\"type\":\"OTHER\",\"name\":\"Other\",\"latitude\":13.0668624,\"longitude\":80.22379060000002,\"flatDetails\":\"29\",\"buildingName\":\"101, 1st St\",\"buildingId\":null,\"landmark\":\" Kamarajar Nagar, Thiruvalluvar Puram\",\"contactNumber\":\"\",\"contactName\":\"\",\"deliverToSomeoneElse\":false,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"101, 1st St, Kamarajar Nagar, Thiruvalluvar Puram, Choolaimedu, Chennai, Tamil Nadu 600094, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"101, 1st St, Kamarajar Nagar, Thiruvalluvar Puram, Choolaimedu, Chennai, Tamil Nadu 600094, India\",\"plus_code\":{\"compound_code\":\"368F+PGV Chennai, Tamil Nadu, India\",\"global_code\":\"7M52368F+PGV\"},\"result\":{\"address_components\":[{\"long_name\":\"101\",\"short_name\":\"101\",\"types\":[\"street_number\"]},{\"long_name\":\"1st Street\",\"short_name\":\"1st St\",\"types\":[\"route\"]},{\"long_name\":\"Kamarajar Nagar\",\"short_name\":\"Kamarajar Nagar\",\"types\":[\"neighborhood\",\"political\"]},{\"long_name\":\"Thiruvalluvar Puram\",\"short_name\":\"Thiruvalluvar Puram\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_2\"]},{\"long_name\":\"Choolaimedu\",\"short_name\":\"Choolaimedu\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600094\",\"short_name\":\"600094\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"101, 1st St, Kamarajar Nagar, Thiruvalluvar Puram, Choolaimedu, Chennai, Tamil Nadu 600094, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":13.0668695,\"lng\":80.2238239},\"southwest\":{\"lat\":13.0667801,\"lng\":80.2237553}},\"location\":{\"lat\":13.0668315,\"lng\":80.22379860000001},\"location_type\":\"ROOFTOP\",\"viewport\":{\"northeast\":{\"lat\":13.0681737802915,\"lng\":80.22513858029151},\"southwest\":{\"lat\":13.0654758197085,\"lng\":80.2224406197085}}},\"place_id\":\"ChIJl6b3B49mUjoRxnAmIjTWxP8\",\"types\":[\"premise\"]},\"shortAddress\":\"Kamarajar Nagar, 1st Street, Thiruvalluvar Puram, Choolaimedu, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"29, 101, 1st St,  Kamarajar Nagar, Thiruvalluvar Puram\",\"floorV2\":null},{\"id\":\"50a0f7db-a363-456c-97ea-2829f7c5b938\",\"type\":\"HOME\",\"name\":\"home\",\"latitude\":12.9796776,\"longitude\":80.13459329999999,\"flatDetails\":\"16/2\",\"buildingName\":\"1st house \",\"buildingId\":null,\"landmark\":\"\",\"contactNumber\":null,\"contactName\":null,\"deliverToSomeoneElse\":null,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"7, 30 Feet Rd, Pasumpon Nagar, Pammal, Chennai, Tamil Nadu 600074, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"7, 30 Feet Rd, Pasumpon Nagar, Pammal, Chennai, Tamil Nadu 600074, India\",\"plus_code\":{\"compound_code\":\"X4HM+VRG Chennai, Tamil Nadu, India\",\"global_code\":\"7M42X4HM+VRG\"},\"result\":{\"address_components\":[{\"long_name\":\"7\",\"short_name\":\"7\",\"types\":[\"street_number\"]},{\"long_name\":\"30 Feet Road\",\"short_name\":\"30 Feet Rd\",\"types\":[\"route\"]},{\"long_name\":\"Pasumpon Nagar\",\"short_name\":\"Pasumpon Nagar\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_2\"]},{\"long_name\":\"Pammal\",\"short_name\":\"Pammal\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Chengalpattu\",\"short_name\":\"Chengalpattu\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600074\",\"short_name\":\"600074\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"7, 30 Feet Rd, Pasumpon Nagar, Pammal, Chennai, Tamil Nadu 600074, India\",\"geometry\":{\"location\":{\"lat\":12.9796767,\"lng\":80.13460769999999},\"location_type\":\"ROOFTOP\",\"viewport\":{\"northeast\":{\"lat\":12.9810256802915,\"lng\":80.13595668029149},\"southwest\":{\"lat\":12.9783277197085,\"lng\":80.13325871970848}}},\"place_id\":\"ChIJ51k1fu5fUjoRy7vl4e0DG8k\",\"plus_code\":{\"compound_code\":\"X4HM+VR Chennai, Tamil Nadu, India\",\"global_code\":\"7M42X4HM+VR\"},\"types\":[\"establishment\",\"point_of_interest\"]},\"shortAddress\":\"30 Feet Road, Pasumpon Nagar, Pammal, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"16/2, 1st house \",\"floorV2\":null},{\"id\":\"0d7d7fb9-6eb4-43c1-93cb-57ed48219585\",\"type\":\"OTHER\",\"name\":\"allan\",\"latitude\":13.0141659,\"longitude\":80.1727783,\"flatDetails\":\"1\",\"buildingName\":\"last\",\"buildingId\":null,\"landmark\":\"last house in right\",\"contactNumber\":null,\"contactName\":null,\"deliverToSomeoneElse\":null,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"2/259, Periya Palayatamman Nagar, Manapakkam, Chennai, Ramapuram, Tamil Nadu 600030, India\",\"googleMapsLocationData\":{\"formattedAddress\":\"2/259, Periya Palayatamman Nagar, Manapakkam, Chennai, Ramapuram, Tamil Nadu 600030, India\",\"plus_code\":{\"compound_code\":\"257F+M46 Chennai, Tamil Nadu, India\",\"global_code\":\"7M52257F+M46\"},\"result\":{\"address_components\":[{\"long_name\":\"2/259\",\"short_name\":\"2/259\",\"types\":[\"premise\"]},{\"long_name\":\"Periya Palayatamman Nagar\",\"short_name\":\"Periya Palayatamman Nagar\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_2\"]},{\"long_name\":\"Manapakkam\",\"short_name\":\"Manapakkam\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Kancheepuram\",\"short_name\":\"Kancheepuram\",\"types\":[\"administrative_area_level_3\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600030\",\"short_name\":\"600030\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"2/259, Periya Palayatamman Nagar, Manapakkam, Chennai, Ramapuram, Tamil Nadu 600030, India\",\"geometry\":{\"bounds\":{\"northeast\":{\"lat\":13.0143268,\"lng\":80.1729355},\"southwest\":{\"lat\":13.0141965,\"lng\":80.17283499999999}},\"location\":{\"lat\":13.0142608,\"lng\":80.1728807},\"location_type\":\"ROOFTOP\",\"viewport\":{\"northeast\":{\"lat\":13.0156106302915,\"lng\":80.17423423029149},\"southwest\":{\"lat\":13.01291266970849,\"lng\":80.17153626970848}}},\"place_id\":\"ChIJbRab8sZgUjoRMLVlt4ulAMw\",\"types\":[\"premise\"]},\"shortAddress\":\"Periya Palayatamman Nagar, Manapakkam, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"1, last, last house in right\",\"floorV2\":null},{\"id\":\"09f58e0a-5f47-414f-b993-9250ea0085f2\",\"type\":\"OTHER\",\"name\":\"other\",\"latitude\":13.084565166958413,\"longitude\":80.21457882598042,\"flatDetails\":\"Nil\",\"buildingName\":\"nil\",\"buildingId\":null,\"landmark\":\"\",\"contactNumber\":null,\"contactName\":null,\"deliverToSomeoneElse\":null,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"Nil nil\",\"googleMapsLocationData\":{\"formattedAddress\":\"36M7+RRG, AB Block, Shanthi Colony, Anna Nagar, Chennai, Tamil Nadu 600040, India\",\"plus_code\":{\"compound_code\":\"36M7+RRG Chennai, Tamil Nadu, India\",\"global_code\":\"7M5236M7+RRG\"},\"result\":{\"address_components\":[{\"long_name\":\"36M7+RRG\",\"short_name\":\"36M7+RRG\",\"types\":[\"plus_code\"]},{\"long_name\":\"AB Block\",\"short_name\":\"AB Block\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_3\"]},{\"long_name\":\"Shanthi Colony\",\"short_name\":\"Shanthi Colony\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_2\"]},{\"long_name\":\"Anna Nagar\",\"short_name\":\"Anna Nagar\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"administrative_area_level_2\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600040\",\"short_name\":\"600040\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"36M7+RRG, AB Block, Shanthi Colony, Anna Nagar, Chennai, Tamil Nadu 600040, India\",\"geometry\":{\"location\":{\"lat\":13.0845653,\"lng\":80.2145792},\"location_type\":\"GEOMETRIC_CENTER\",\"viewport\":{\"northeast\":{\"lat\":13.0859142802915,\"lng\":80.21592818029151},\"southwest\":{\"lat\":13.0832163197085,\"lng\":80.2132302197085}}},\"place_id\":\"ChIJ7XEw4IxlUjoR11zpayEDcHY\",\"types\":[\"establishment\",\"food\",\"grocery_or_supermarket\",\"point_of_interest\",\"store\"]},\"shortAddress\":\"AB Block, Shanthi Colony, Anna Nagar, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"Nil, nil\",\"floorV2\":null},{\"id\":\"b9ac3a81-3e8c-48af-9949-55181124585d\",\"type\":\"OTHER\",\"name\":\"other\",\"latitude\":13.051472779296622,\"longitude\":80.2261066250503,\"flatDetails\":\"3a 7/3 \",\"buildingName\":\"bethel gardens \",\"buildingId\":null,\"landmark\":\"\",\"contactNumber\":null,\"contactName\":null,\"deliverToSomeoneElse\":null,\"additionalDirections\":null,\"customerName\":null,\"referralCode\":null,\"googleFormattedAddress\":\"3a 7/3  bethel gardens \",\"googleMapsLocationData\":{\"formattedAddress\":\"Old No 4, New No9, Circular Road, United India Colony Kodambakkam, Circular Road, United India Colony, Kodambakkam, Chennai, Tamil Nadu 600024, India\",\"plus_code\":{\"compound_code\":\"362G+HCQ Chennai, Tamil Nadu, India\",\"global_code\":\"7M52362G+HCQ\"},\"result\":{\"address_components\":[{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"locality\",\"political\"]},{\"long_name\":\"United India Colony\",\"short_name\":\"United India Colony\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_2\"]},{\"long_name\":\"Kodambakkam\",\"short_name\":\"Kodambakkam\",\"types\":[\"political\",\"sublocality\",\"sublocality_level_1\"]},{\"long_name\":\"Chennai\",\"short_name\":\"Chennai\",\"types\":[\"administrative_area_level_2\",\"political\"]},{\"long_name\":\"Tamil Nadu\",\"short_name\":\"TN\",\"types\":[\"administrative_area_level_1\",\"political\"]},{\"long_name\":\"India\",\"short_name\":\"IN\",\"types\":[\"country\",\"political\"]},{\"long_name\":\"600024\",\"short_name\":\"600024\",\"types\":[\"postal_code\"]}],\"formatted_address\":\"Old No 4, New No9, Circular Road, United India Colony Kodambakkam, Circular Road, United India Colony, Kodambakkam, Chennai, Tamil Nadu 600024, India\",\"geometry\":{\"location\":{\"lat\":13.0514912,\"lng\":80.2261437},\"location_type\":\"GEOMETRIC_CENTER\",\"viewport\":{\"northeast\":{\"lat\":13.0528401802915,\"lng\":80.2274926802915},\"southwest\":{\"lat\":13.0501422197085,\"lng\":80.2247947197085}}},\"place_id\":\"ChIJy7j_UPFmUjoRXLg-cMDIS80\",\"plus_code\":{\"compound_code\":\"362G+HF Chennai, Tamil Nadu, India\",\"global_code\":\"7M52362G+HF\"},\"types\":[\"electronics_store\",\"establishment\",\"point_of_interest\",\"store\"]},\"shortAddress\":\"United India Colony, Kodambakkam, Chennai, Tamil Nadu\"},\"referralCodeRedeemed\":null,\"referralCodeMessage\":null,\"floor\":null,\"block\":null,\"instructions\":null,\"instructionImg\":[],\"buildingType\":null,\"displayText\":\"3a 7/3 , bethel gardens \",\"floorV2\":null}],\"userSelectedEditAddressPosition\":null},\"version\":0}"
+        },
+        {
+          "name": "userRecentSearches",
+          "value": "{\"state\":{\"recentSearches\":[\"Water\"]},\"version\":0}"
+        }
+      ]
+    }
+  ]
+}

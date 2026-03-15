@@ -1,58 +1,67 @@
 /**
- * Grocery Shopping Agent — Telegram Bot
+ * Grocery Shopping Bot — Telegram
  *
- * Acts as a mock orchestrator for Phase 1.
- * User pays USDC via x402 → bot confirms → mocks Zepto order.
- * Phase 2: replace mockZeptoOrder() with real Chromium automation.
+ * Flow:
+ *   /search <query> → pick product → x402 payment on GOAT Network → Zepto order placed
  */
 
 import TelegramBot from 'node-telegram-bot-api'
-import { GoatX402Client } from 'goatx402-sdk-server'
 import { ethers } from 'ethers'
+import { GoatX402Client } from 'goatx402-sdk-server'
+import { getZeptoSession, provideOtp } from './zepto/session.js'
+import { placeZeptoOrder } from './zepto/order.js'
+import { searchZeptoProducts } from './zepto/search.js'
+import type { ZeptoProduct } from './zepto/search.js'
+import type { BrowserContext } from 'playwright'
 
-const CHAIN_ID = 48816
+// ── Chain config ──────────────────────────────────────────────
+const CHAIN_ID      = 48816
 const USDC_CONTRACT = '0x29d1ee93e9ecf6e50f309f498e40a6b42d352fa1'
-const GOAT_RPC = 'https://rpc.testnet3.goat.network'
-const RPC_EXPLORER = 'https://explorer.testnet3.goat.network'
+const GOAT_RPC      = 'https://rpc.testnet3.goat.network'
+const RPC_EXPLORER  = 'https://explorer.testnet3.goat.network'
+const USDC_ABI      = ['function transfer(address to, uint256 amount) returns (bool)']
+const PRICE_USDC    = 0.1
 
-const USDC_ABI = ['function transfer(address to, uint256 amount) returns (bool)']
+const goatx402Client = new GoatX402Client({
+  baseUrl:   process.env.GOATX402_API_URL!,
+  apiKey:    process.env.GOATX402_API_KEY!,
+  apiSecret: process.env.GOATX402_API_SECRET!,
+})
 
 async function payOnChain(payToAddress: string, amountWei: string): Promise<string> {
   const pk = process.env.USER_WALLET_PRIVATE_KEY
   if (!pk) throw new Error('USER_WALLET_PRIVATE_KEY not set in .env')
-
   const provider = new ethers.JsonRpcProvider(GOAT_RPC)
-  const wallet = new ethers.Wallet(pk, provider)
-  const usdc = new ethers.Contract(USDC_CONTRACT, USDC_ABI, wallet)
-
+  const wallet   = new ethers.Wallet(pk, provider)
+  const usdc     = new ethers.Contract(USDC_CONTRACT, USDC_ABI, wallet)
   const tx = await usdc.transfer(payToAddress, BigInt(amountWei), {
     gasLimit: 100000n,
     gasPrice: 1000000n,
   })
-
   await tx.wait()
   return tx.hash as string
 }
 
-// Grocery catalog — price in USDC
-const CATALOG: Record<string, { name: string; priceUsdc: number; emoji: string }> = {
-  'mango juice':  { name: 'Mango Juice 200ml',      priceUsdc: 0.1, emoji: '🥭' },
-  'water':        { name: 'Bisleri Water 1L',        priceUsdc: 0.1, emoji: '💧' },
-  'coke':         { name: 'Coca Cola 250ml',         priceUsdc: 0.1, emoji: '🥤' },
-  'coffee':       { name: 'Nescafe Coffee Sachet',   priceUsdc: 0.1, emoji: '☕' },
-  'chips':        { name: "Lay's Chips 26g",         priceUsdc: 0.1, emoji: '🍟' },
-  'energy drink': { name: 'Red Bull 250ml',          priceUsdc: 0.1, emoji: '⚡' },
-  'milk':         { name: 'Amul Full Cream Milk 1L', priceUsdc: 0.1, emoji: '🥛' },
+async function waitForConfirmation(orderId: string, timeoutMs = 120_000): Promise<void> {
+  const deadline = Date.now() + timeoutMs
+  while (Date.now() < deadline) {
+    const status = await goatx402Client.getOrderStatus(orderId)
+    if (status.status === 'PAYMENT_CONFIRMED' || status.status === 'INVOICED') return
+    if (['FAILED', 'EXPIRED', 'CANCELLED'].includes(status.status)) {
+      throw new Error(`Payment ${status.status}`)
+    }
+    await new Promise(r => setTimeout(r, 3000))
+  }
+  throw new Error('Payment confirmation timeout')
 }
 
-// Active payment polls: orderId → chatId + item info
-const pendingOrders = new Map<string, {
-  chatId: number
-  itemName: string
-  priceUsdc: number
-}>()
+// ── Zepto session ─────────────────────────────────────────────
+let zeptoContext: BrowserContext | null = null
 
-export function startBot(goatx402Client: GoatX402Client) {
+// ── Pending searches ──────────────────────────────────────────
+const pendingSearches = new Map<number, ZeptoProduct[]>()
+
+export function startBot() {
   const token = process.env.TELEGRAM_BOT_TOKEN
   if (!token) {
     console.warn('[bot] TELEGRAM_BOT_TOKEN not set — bot disabled')
@@ -62,202 +71,145 @@ export function startBot(goatx402Client: GoatX402Client) {
   const bot = new TelegramBot(token, { polling: true })
   console.log('[bot] Telegram bot started (polling)')
 
-  // ── Helpers ──────────────────────────────────────────────────
-
-  function findItem(query: string) {
-    const q = query.toLowerCase().trim()
-    for (const [key, val] of Object.entries(CATALOG)) {
-      if (q.includes(key) || key.includes(q)) return { key, ...val }
-    }
-    return null
-  }
-
-  // Phase 2: replace this with real Chromium automation
-  function mockZeptoOrder(itemName: string) {
-    console.log(`[mock] 🤖 Chromium would launch Zepto here and order: ${itemName}`)
-    return {
-      zeptoOrderId: `ZPT-${Date.now()}`,
-      item: itemName,
-      eta: '10–15 mins',
-    }
-  }
-
-  async function pollForPayment(orderId: string) {
-    const pending = pendingOrders.get(orderId)
-    if (!pending) return
-
-    const { chatId, itemName, priceUsdc } = pending
-    const maxAttempts = 40 // ~2 minutes at 3s intervals
-    let attempts = 0
-
-    const interval = setInterval(async () => {
-      attempts++
-
-      if (attempts > maxAttempts) {
-        clearInterval(interval)
-        pendingOrders.delete(orderId)
+  async function getSession(chatId: number) {
+    if (!zeptoContext) {
+      const result = await getZeptoSession(() => {
         bot.sendMessage(chatId,
-          `⏱ Payment timeout for order \`${orderId}\`.\nOrder cancelled — try again with /order.`,
+          `📱 *OTP sent to your phone.*\nReply with \`/otp <code>\` to continue Zepto login.`,
           { parse_mode: 'Markdown' }
         )
-        return
-      }
-
-      try {
-        const status = await goatx402Client.getOrderStatus(orderId)
-
-        if (status.status === 'PAYMENT_CONFIRMED' || status.status === 'INVOICED') {
-          clearInterval(interval)
-          pendingOrders.delete(orderId)
-
-          // Confirm payment
-          await bot.sendMessage(chatId,
-            `✅ *Payment confirmed!*\n` +
-            `💰 ${priceUsdc} USDC received\n` +
-            (status.txHash
-              ? `🔗 [View TX](${RPC_EXPLORER}/tx/${status.txHash})\n`
-              : '') +
-            `\n🛒 Placing your order on Zepto...`,
-            { parse_mode: 'Markdown' }
-          )
-
-          // Mock Zepto automation
-          await new Promise(r => setTimeout(r, 1500))
-          const zepto = mockZeptoOrder(itemName)
-
-          bot.sendMessage(chatId,
-            `📦 *Order Placed!*\n\n` +
-            `Item: ${itemName}\n` +
-            `Zepto Order ID: \`${zepto.zeptoOrderId}\`\n` +
-            `ETA: ${zepto.eta}\n\n` +
-            `_[Mock] Real Chromium automation coming in Phase 2_`,
-            { parse_mode: 'Markdown' }
-          )
-
-        } else if (status.status === 'FAILED' || status.status === 'EXPIRED' || status.status === 'CANCELLED') {
-          clearInterval(interval)
-          pendingOrders.delete(orderId)
-          bot.sendMessage(chatId,
-            `❌ Payment ${status.status.toLowerCase()}.\nTry again with /order.`
-          )
-        }
-      } catch {
-        // silently retry
-      }
-    }, 3000)
+      })
+      zeptoContext = result.context
+    }
+    return zeptoContext
   }
 
-  // ── Commands ─────────────────────────────────────────────────
+  // ── Commands ──────────────────────────────────────────────────
 
   bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id,
-      `🐐 *Grocery Shopping Agent*\n\n` +
-      `I order groceries from Zepto using crypto payments.\n\n` +
+      `🛒 *Zepto Shopping Bot*\n\n` +
+      `I order groceries from Zepto — paid via x402 on GOAT Network.\n\n` +
       `*Commands:*\n` +
-      `/order <item> — order an item (pay with USDC)\n` +
-      `/catalog — see available items & prices\n` +
-      `/status <orderId> — check payment status\n\n` +
-      `_Powered by x402 + ERC-8004 on GOAT Network_`,
+      `/search <query> — search Zepto & pick a product\n` +
+      `/cancel — cancel active search\n` +
+      `/otp <code> — submit Zepto OTP when prompted`,
       { parse_mode: 'Markdown' }
     )
   })
 
-  bot.onText(/\/catalog/, (msg) => {
-    const list = Object.values(CATALOG)
-      .map(v => `${v.emoji} ${v.name} — \`${v.priceUsdc} USDC\``)
-      .join('\n')
-    bot.sendMessage(msg.chat.id,
-      `🛒 *Available Items:*\n\n${list}\n\n` +
-      `Use /order <item name> to order`,
-      { parse_mode: 'Markdown' }
-    )
+  bot.onText(/\/otp (.+)/, (msg, match) => {
+    provideOtp(match![1].trim())
+    bot.sendMessage(msg.chat.id, `✅ OTP submitted.`)
   })
 
-  bot.onText(/\/order (.+)/, async (msg, match) => {
+  bot.onText(/\/cancel/, (msg) => {
+    pendingSearches.delete(msg.chat.id)
+    bot.sendMessage(msg.chat.id, `❌ Search cancelled.`)
+  })
+
+  bot.onText(/\/search (.+)/, async (msg, match) => {
     const chatId = msg.chat.id
-    const query = match![1]
-    const item = findItem(query)
+    const query  = match![1].trim()
 
-    if (!item) {
-      return bot.sendMessage(chatId,
-        `❓ Couldn't find *"${query}"* in the catalog.\nTry /catalog to see what's available.`,
+    await bot.sendMessage(chatId, `🔍 Searching Zepto for *"${query}"*...`, { parse_mode: 'Markdown' })
+
+    try {
+      const context  = await getSession(chatId)
+      const products = await searchZeptoProducts(context, query)
+
+      if (products.length === 0) {
+        return bot.sendMessage(chatId, `❌ No products found for *"${query}"*.`, { parse_mode: 'Markdown' })
+      }
+
+      pendingSearches.set(chatId, products)
+
+      const list = products.map((p, i) => `*${i + 1}.* ${p.name} — ${p.price}`).join('\n')
+
+      await bot.sendMessage(chatId,
+        `🛒 *Results for "${query}":*\n\n${list}\n\n` +
+        `Reply with a number to order, or /cancel to abort.`,
         { parse_mode: 'Markdown' }
+      )
+    } catch (err) {
+      bot.sendMessage(chatId, `❌ Search failed: ${err instanceof Error ? err.message : 'Unknown error'}`)
+    }
+  })
+
+  // Number selection → payment → Zepto order
+  bot.on('message', async (msg) => {
+    const chatId = msg.chat.id
+    const text   = msg.text?.trim()
+    if (!text || text.startsWith('/') || !pendingSearches.has(chatId)) return
+
+    const num      = parseInt(text, 10)
+    const products = pendingSearches.get(chatId)!
+
+    if (isNaN(num) || num < 1 || num > products.length) {
+      return bot.sendMessage(chatId,
+        `Please reply with a number between 1 and ${products.length}, or /cancel.`
       )
     }
 
-    try {
-      const amountWei = Math.floor(item.priceUsdc * 1e6).toString()
+    const selected = products[num - 1]
+    pendingSearches.delete(chatId)
 
+    await bot.sendMessage(chatId,
+      `✅ *${selected.name}* (${selected.price})\n\n⏳ Initiating x402 payment...`,
+      { parse_mode: 'Markdown' }
+    )
+
+    try {
+      const amountWei = Math.floor(PRICE_USDC * 1e6).toString()
+
+      // Step 1: Create x402 order
       const order = await goatx402Client.createOrder({
-        dappOrderId: `tg-${chatId}-${Date.now()}`,
-        chainId: CHAIN_ID,
-        tokenSymbol: 'USDC',
+        dappOrderId:   `tg-${chatId}-${Date.now()}`,
+        chainId:       CHAIN_ID,
+        tokenSymbol:   'USDC',
         tokenContract: USDC_CONTRACT,
-        fromAddress: '0x0000000000000000000000000000000000000000',
+        fromAddress:   new ethers.Wallet(process.env.USER_WALLET_PRIVATE_KEY!).address,
         amountWei,
       })
 
-      pendingOrders.set(order.orderId, {
-        chatId,
-        itemName: item.name,
-        priceUsdc: item.priceUsdc,
-      })
+      await bot.sendMessage(chatId,
+        `💳 *x402 Order Created*\n` +
+        `Order ID: \`${order.orderId}\`\n` +
+        `Amount: \`${PRICE_USDC} USDC\`\n\n` +
+        `⏳ Paying on-chain...`,
+        { parse_mode: 'Markdown' }
+      )
+
+      // Step 2: Pay on-chain
+      const txHash = await payOnChain(order.payToAddress, amountWei)
 
       await bot.sendMessage(chatId,
-        `${item.emoji} *${item.name}*\n\n` +
-        `💳 *x402 Payment Initiated*\n` +
-        `Amount: \`${item.priceUsdc} USDC\`\n` +
-        `Order ID: \`${order.orderId}\`\n\n` +
-        `⏳ Agent is paying on-chain...`,
+        `✅ *Payment Sent!*\n` +
+        `🔗 [View TX](${RPC_EXPLORER}/tx/${txHash})\n\n` +
+        `⏳ Waiting for confirmation...`,
         { parse_mode: 'Markdown' }
       )
 
-      // Agent auto-pays on-chain
-      try {
-        const txHash = await payOnChain(order.payToAddress, amountWei)
-        await bot.sendMessage(chatId,
-          `✅ *Payment sent!*\n` +
-          `🔗 [View TX](${RPC_EXPLORER}/tx/${txHash})\n\n` +
-          `⏳ Waiting for confirmation...`,
-          { parse_mode: 'Markdown' }
-        )
-      } catch (payErr) {
-        const errMsg = payErr instanceof Error ? payErr.message : 'Unknown error'
-        await bot.sendMessage(chatId, `❌ Auto-payment failed: ${errMsg}`)
-        pendingOrders.delete(order.orderId)
-        return
-      }
+      // Step 3: Wait for confirmation
+      await waitForConfirmation(order.orderId)
 
-      pollForPayment(order.orderId)
+      await bot.sendMessage(chatId, `✅ *Payment confirmed!*\n\n🛒 Placing order on Zepto...`, { parse_mode: 'Markdown' })
+
+      // Step 4: Place Zepto order
+      const context = await getSession(chatId)
+      const zepto   = await placeZeptoOrder(context, selected.name, selected.url)
+
+      bot.sendMessage(chatId,
+        `📦 *Order Placed!*\n\n` +
+        `Item: ${zepto.item}\n` +
+        `Price: ${zepto.price}\n` +
+        `ETA: ${zepto.eta}\n` +
+        `Zepto Order ID: \`${zepto.zeptoOrderId}\``,
+        { parse_mode: 'Markdown' }
+      )
 
     } catch (err) {
-      const msg2 = err instanceof Error ? err.message : 'Unknown error'
-      bot.sendMessage(chatId, `❌ Failed to create order: ${msg2}`)
+      bot.sendMessage(chatId, `❌ Order failed: ${err instanceof Error ? err.message : 'Unknown error'}`)
     }
   })
-
-  bot.onText(/\/status (.+)/, async (msg, match) => {
-    const chatId = msg.chat.id
-    const orderId = match![1].trim()
-
-    try {
-      const status = await goatx402Client.getOrderStatus(orderId)
-      bot.sendMessage(chatId,
-        `📊 *Payment Status*\n\n` +
-        `Order ID: \`${orderId}\`\n` +
-        `Status: \`${status.status}\`\n` +
-        (status.txHash ? `TX: \`${status.txHash}\`\n` : '') +
-        (status.confirmedAt ? `Confirmed: ${new Date(status.confirmedAt).toLocaleString()}` : ''),
-        { parse_mode: 'Markdown' }
-      )
-    } catch {
-      bot.sendMessage(chatId, `❌ Order not found: \`${orderId}\``, { parse_mode: 'Markdown' })
-    }
-  })
-
-  bot.on('polling_error', (err) => {
-    console.error('[bot] Polling error:', err.message)
-  })
-
-  return bot
 }
