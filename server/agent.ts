@@ -59,13 +59,13 @@ const goatx402Client = new GoatX402Client({
 // ── Catalog ───────────────────────────────────────────────────
 
 const CATALOG: Record<string, { name: string; priceUsdc: number; emoji: string }> = {
-  'mango juice':  { name: 'Mango Juice 200ml',      priceUsdc: 0.001, emoji: '🥭' },
-  'water':        { name: 'Bisleri Water 1L',        priceUsdc: 0.001, emoji: '💧' },
-  'coke':         { name: 'Coca Cola 250ml',         priceUsdc: 0.001, emoji: '🥤' },
-  'coffee':       { name: 'Nescafe Coffee Sachet',   priceUsdc: 0.001, emoji: '☕' },
-  'chips':        { name: "Lay's Chips 26g",         priceUsdc: 0.001, emoji: '🍟' },
-  'energy drink': { name: 'Red Bull 250ml',          priceUsdc: 0.001, emoji: '⚡' },
-  'milk':         { name: 'Amul Full Cream Milk 1L', priceUsdc: 0.001, emoji: '🥛' },
+  'mango juice':  { name: 'Mango Juice 200ml',      priceUsdc: 0.1, emoji: '🥭' },
+  'water':        { name: 'Bisleri Water 1L',        priceUsdc: 0.1, emoji: '💧' },
+  'coke':         { name: 'Coca Cola 250ml',         priceUsdc: 0.1, emoji: '🥤' },
+  'coffee':       { name: 'Nescafe Coffee Sachet',   priceUsdc: 0.1, emoji: '☕' },
+  'chips':        { name: "Lay's Chips 26g",         priceUsdc: 0.1, emoji: '🍟' },
+  'energy drink': { name: 'Red Bull 250ml',          priceUsdc: 0.1, emoji: '⚡' },
+  'milk':         { name: 'Amul Full Cream Milk 1L', priceUsdc: 0.1, emoji: '🥛' },
 }
 
 function findItem(query: string) {
