@@ -19,6 +19,22 @@ import { ethers } from 'ethers'
 import { GoatX402Client } from 'goatx402-sdk-server'
 import ngrok from '@ngrok/ngrok'
 import 'dotenv/config'
+import { getZeptoSession, provideOtp } from './zepto/session.js'
+import { placeZeptoOrder } from './zepto/order.js'
+import type { Browser, BrowserContext } from 'playwright'
+
+// Zepto browser session (reused across orders)
+let zeptoBrowser: Browser | null = null
+let zeptoContext: BrowserContext | null = null
+
+async function getSession() {
+  if (!zeptoContext) {
+    const result = await getZeptoSession()
+    zeptoBrowser = result.browser
+    zeptoContext  = result.context
+  }
+  return zeptoContext
+}
 
 const app = express()
 const port = process.env.AGENT_PORT || 3002
@@ -93,15 +109,9 @@ async function waitForConfirmation(orderId: string, timeoutMs = 120_000): Promis
   throw new Error('Payment confirmation timeout')
 }
 
-// Phase 2: replace with real Chromium automation
-function mockZeptoOrder(itemName: string) {
-  console.log(`[mock] 🤖 Chromium would launch Zepto and order: ${itemName}`)
-  return {
-    zeptoOrderId: `ZPT-${Date.now()}`,
-    item: itemName,
-    eta: '10–15 mins',
-    status: 'confirmed',
-  }
+async function runZeptoOrder(itemName: string) {
+  const context = await getSession()
+  return placeZeptoOrder(context, itemName)
 }
 
 // ── Routes ────────────────────────────────────────────────────
@@ -176,8 +186,9 @@ app.post('/order', async (req, res) => {
     await waitForConfirmation(order.orderId)
     console.log('[agent] Payment confirmed!')
 
-    // Step 4: Mock Zepto order
-    const zepto = mockZeptoOrder(item.name)
+    // Step 4: Real Zepto order via Playwright
+    console.log('[agent] Launching Zepto automation...')
+    const zepto = await runZeptoOrder(item.name)
     console.log(`[agent] Zepto order: ${zepto.zeptoOrderId}`)
 
     res.json({
@@ -193,9 +204,9 @@ app.post('/order', async (req, res) => {
       zepto: {
         orderId: zepto.zeptoOrderId,
         eta:     zepto.eta,
-        status:  zepto.status,
+        status:  'confirmed',
       },
-      message: `${item.emoji} ${item.name} ordered! Arriving in ${zepto.eta}.`,
+      message: `${item.emoji} ${item.name} ordered on Zepto! Arriving in ${zepto.eta}.`,
     })
 
   } catch (err) {
@@ -203,6 +214,20 @@ app.post('/order', async (req, res) => {
     console.error('[agent] Error:', message)
     res.status(500).json({ error: message })
   }
+})
+
+/**
+ * POST /otp
+ * Body: { otp: "123456" }
+ * Called by OpenClaw/user after receiving OTP on phone.
+ * Unblocks the Zepto login flow.
+ */
+app.post('/otp', (req, res) => {
+  const { otp } = req.body
+  if (!otp) return res.status(400).json({ error: 'Missing otp in body' })
+  provideOtp(String(otp))
+  console.log(`[agent] OTP received: ${otp}`)
+  res.json({ success: true, message: 'OTP submitted, login continuing...' })
 })
 
 // Order status
@@ -222,6 +247,7 @@ app.listen(port, async () => {
   console.log(`   GET  /health          — health check`)
   console.log(`   GET  /catalog         — browse items`)
   console.log(`   POST /order           — place order (body: { "item": "mango juice" })`)
+  console.log(`   POST /otp             — submit Zepto OTP (body: { "otp": "123456" })`)
   console.log(`   GET  /status/:orderId — payment status\n`)
 
   // Expose via ngrok
