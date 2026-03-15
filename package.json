@@ -7,12 +7,14 @@
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:client": "vite",
     "dev:server": "tsx watch server/index.ts",
+    "dev:agent": "tsx watch server/agent.ts",
     "build": "tsc && vite build",
     "build:server": "tsc -p server/tsconfig.json",
     "start": "node dist/server/index.js",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ngrok/ngrok": "^1.7.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.0",
     "ethers": "^6.9.0",
