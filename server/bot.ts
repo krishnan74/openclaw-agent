@@ -8,10 +8,31 @@
 
 import TelegramBot from 'node-telegram-bot-api'
 import { GoatX402Client } from 'goatx402-sdk-server'
+import { ethers } from 'ethers'
 
 const CHAIN_ID = 48816
 const USDC_CONTRACT = '0x29d1ee93e9ecf6e50f309f498e40a6b42d352fa1'
+const GOAT_RPC = 'https://rpc.testnet3.goat.network'
 const RPC_EXPLORER = 'https://explorer.testnet3.goat.network'
+
+const USDC_ABI = ['function transfer(address to, uint256 amount) returns (bool)']
+
+async function payOnChain(payToAddress: string, amountWei: string): Promise<string> {
+  const pk = process.env.USER_WALLET_PRIVATE_KEY
+  if (!pk) throw new Error('USER_WALLET_PRIVATE_KEY not set in .env')
+
+  const provider = new ethers.JsonRpcProvider(GOAT_RPC)
+  const wallet = new ethers.Wallet(pk, provider)
+  const usdc = new ethers.Contract(USDC_CONTRACT, USDC_ABI, wallet)
+
+  const tx = await usdc.transfer(payToAddress, BigInt(amountWei), {
+    gasLimit: 100000n,
+    gasPrice: 1000000n,
+  })
+
+  await tx.wait()
+  return tx.hash as string
+}
 
 // Grocery catalog — price in USDC
 const CATALOG: Record<string, { name: string; priceUsdc: number; emoji: string }> = {
@@ -184,20 +205,28 @@ export function startBot(goatx402Client: GoatX402Client) {
 
       await bot.sendMessage(chatId,
         `${item.emoji} *${item.name}*\n\n` +
-        `💳 *Payment Required (x402)*\n\n` +
+        `💳 *x402 Payment Initiated*\n` +
         `Amount: \`${item.priceUsdc} USDC\`\n` +
-        `Pay to: \`${order.payToAddress}\`\n` +
         `Order ID: \`${order.orderId}\`\n\n` +
-        `*Pay via cast (GOAT Testnet3):*\n` +
-        `\`\`\`\ncast send ${USDC_CONTRACT} \\\n` +
-        `  "transfer(address,uint256)" \\\n` +
-        `  ${order.payToAddress} ${amountWei} \\\n` +
-        `  --rpc-url https://rpc.testnet3.goat.network \\\n` +
-        `  --priority-gas-price 130000 --gas-price 1000000 \\\n` +
-        `  --private-key $YOUR_PK\n\`\`\`\n\n` +
-        `⏳ Waiting for payment... (2 min timeout)`,
+        `⏳ Agent is paying on-chain...`,
         { parse_mode: 'Markdown' }
       )
+
+      // Agent auto-pays on-chain
+      try {
+        const txHash = await payOnChain(order.payToAddress, amountWei)
+        await bot.sendMessage(chatId,
+          `✅ *Payment sent!*\n` +
+          `🔗 [View TX](${RPC_EXPLORER}/tx/${txHash})\n\n` +
+          `⏳ Waiting for confirmation...`,
+          { parse_mode: 'Markdown' }
+        )
+      } catch (payErr) {
+        const errMsg = payErr instanceof Error ? payErr.message : 'Unknown error'
+        await bot.sendMessage(chatId, `❌ Auto-payment failed: ${errMsg}`)
+        pendingOrders.delete(order.orderId)
+        return
+      }
 
       pollForPayment(order.orderId)
 
