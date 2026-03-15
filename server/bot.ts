@@ -36,13 +36,13 @@ async function payOnChain(payToAddress: string, amountWei: string): Promise<stri
 
 // Grocery catalog — price in USDC
 const CATALOG: Record<string, { name: string; priceUsdc: number; emoji: string }> = {
-  'mango juice':  { name: 'Mango Juice 200ml',     priceUsdc: 0.5,  emoji: '🥭' },
-  'water':        { name: 'Bisleri Water 1L',       priceUsdc: 0.2,  emoji: '💧' },
-  'coke':         { name: 'Coca Cola 250ml',        priceUsdc: 0.4,  emoji: '🥤' },
-  'coffee':       { name: 'Nescafe Coffee Sachet',  priceUsdc: 0.8,  emoji: '☕' },
-  'chips':        { name: "Lay's Chips 26g",        priceUsdc: 0.3,  emoji: '🍟' },
-  'energy drink': { name: 'Red Bull 250ml',         priceUsdc: 1.2,  emoji: '⚡' },
-  'milk':         { name: 'Amul Full Cream Milk 1L',priceUsdc: 0.6,  emoji: '🥛' },
+  'mango juice':  { name: 'Mango Juice 200ml',      priceUsdc: 0.001, emoji: '🥭' },
+  'water':        { name: 'Bisleri Water 1L',        priceUsdc: 0.001, emoji: '💧' },
+  'coke':         { name: 'Coca Cola 250ml',         priceUsdc: 0.001, emoji: '🥤' },
+  'coffee':       { name: 'Nescafe Coffee Sachet',   priceUsdc: 0.001, emoji: '☕' },
+  'chips':        { name: "Lay's Chips 26g",         priceUsdc: 0.001, emoji: '🍟' },
+  'energy drink': { name: 'Red Bull 250ml',          priceUsdc: 0.001, emoji: '⚡' },
+  'milk':         { name: 'Amul Full Cream Milk 1L', priceUsdc: 0.001, emoji: '🥛' },
 }
 
 // Active payment polls: orderId → chatId + item info
